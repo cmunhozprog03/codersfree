@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Level extends Model
 {
     use HasFactory;
+
+    // Relação um para muitos
+    public function courses()
+    {
+        return $this->hasMany('App\Models\Course');
+    }
 }
