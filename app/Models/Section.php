@@ -9,9 +9,16 @@ class Section extends Model
 {
     use HasFactory;
 
+    //relação um para muitos
+    public function lessons()
+    {
+        return $this->hasMany('App\Models\Lesson');
+    }
+
+
     // Relação umpara muitos inversa
     public function course()
     {
-        return $this->belongsTo('App\Models|Course');
+        return $this->belongsTo('App\Models\Course');
     }
 }
