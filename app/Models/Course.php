@@ -68,4 +68,15 @@ class Course extends Model
     {
         return $this->belongsToMany('App\Models\User');
     }
+
+    //Relação um para um poliformica
+    public function image()
+    {
+        return $this->morphOne('App\Models\image', 'imageable');
+    }
+
+    public function lessons()
+    {
+        return $this->hasManyThrough('App\Models\Lesson', 'App\Models\Section');
+    }
 }

@@ -11,4 +11,17 @@ class Reaction extends Model
 
     const LIKE = 1;
     const DISLIKE = 2;
+
+    // Relação um para muitos inversa
+    public function user()
+    {
+        return $this->belongsToMany('App\Models\User');
+    }
+
+
+    // Relação poliformica
+    public function reactioable()
+    {
+        return $this->morphTo();
+    }
 }
