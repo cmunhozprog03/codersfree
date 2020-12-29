@@ -9,6 +9,8 @@ class Description extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id'];
+
     // Relação um a um inversa
     public function lesson()
     {

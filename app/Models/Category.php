@@ -9,6 +9,8 @@ class Category extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id'];
+
     // Relação um para muitos
     public function courses()
     {

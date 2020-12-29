@@ -9,6 +9,8 @@ class image extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id'];
+
     //Relação poliformica
     public function imageable()
     {
